@@ -1,9 +1,10 @@
+# Contributor: envolution
 # Contributor: mnussbaum
 # Contributor: j.r <j.r@jugendhacker.de>
 
 pkgname=rot8-git
 _pkgname="rot8"
-pkgver=0.1.4.48.ge8d1bfe
+pkgver=1.0.0.a6e8abf
 pkgrel=1
 pkgdesc="A screen rotation daemon "
 arch=("x86_64" "aarch64")
