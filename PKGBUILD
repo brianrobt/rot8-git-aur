@@ -1,10 +1,10 @@
-# Contributor: envolution
+# Maintainer: envolution
 # Contributor: mnussbaum
 # Contributor: j.r <j.r@jugendhacker.de>
 
 pkgname=rot8-git
 _pkgname="rot8"
-pkgver=1.0.0.a6e8abf
+pkgver=1.0.0.108.gb805f98
 pkgrel=1
 pkgdesc="A screen rotation daemon "
 arch=("x86_64" "aarch64")
@@ -12,7 +12,7 @@ url="https://github.com/efernau/rot8"
 license=("MIT")
 makedepends=("git" "rust" "cargo")
 source=("$_pkgname::git+https://github.com/efernau/rot8.git")
-sha256sums=("SKIP")
+sha256sums=('SKIP')
 provides=("rot8")
 conflicts=("rot8")
 
