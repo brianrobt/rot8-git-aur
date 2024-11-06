@@ -4,7 +4,7 @@
 
 pkgname=rot8-git
 _pkgname="rot8"
-pkgver=1.0.0.108.gb805f98
+pkgver=1.0.0+r108+b805f981b
 pkgrel=1
 pkgdesc="A screen rotation daemon "
 arch=("x86_64" "aarch64")
@@ -16,10 +16,16 @@ sha256sums=('SKIP')
 provides=("rot8")
 conflicts=("rot8")
 
-pkgver() {
-  cd $_pkgname
-  echo -n "$(grep '^version =' Cargo.toml|head -n1|cut -d\" -f2|cut -d\- -f1).$(git rev-list --count HEAD).g$(git rev-parse --short HEAD)"
+pkgver(){
+  cd "${srcdir}/${_pkgname}"
+  _version=$(git tag --sort=-v:refname --list | head -n1 | cut -c2-)
+  _commits=$(git rev-list --count HEAD)
+  _short_commit_hash=$(git rev-parse --short=9 HEAD)
+  echo "${_version}+r${_commits}+${_short_commit_hash}"
 }
+
+
+
 
 prepare() {
   cd "$_pkgname"
