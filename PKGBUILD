@@ -4,7 +4,7 @@
 
 pkgname=rot8-git
 _pkgname="rot8"
-pkgver=1.0.0+r108+b805f981b
+pkgver=1.0.0+r108+gb805f981b
 pkgrel=1
 pkgdesc="A screen rotation daemon "
 arch=("x86_64" "aarch64")
@@ -21,7 +21,7 @@ pkgver(){
   _version=$(git tag --sort=-v:refname --list | head -n1 | cut -c2-)
   _commits=$(git rev-list --count HEAD)
   _short_commit_hash=$(git rev-parse --short=9 HEAD)
-  echo "${_version}+r${_commits}+${_short_commit_hash}"
+  echo "${_version}+r${_commits}+g${_short_commit_hash}"
 }
 
 
