@@ -1,10 +1,11 @@
-# Maintainer : envolution
+# Maintainer: Brian Thompson <brianrobt@pm.me>
+# Contributor: envolution
 # Contributor: mnussbaum
 # Contributor: j.r <j.r@jugendhacker.de>
 
 pkgname=rot8-git
 _pkgname="rot8"
-pkgver=1.0.0+r108+gb805f981b
+pkgver=1.0.0+r109+g6a51f7cdf
 pkgrel=1
 pkgdesc="A screen rotation daemon "
 arch=("x86_64" "aarch64")
@@ -23,9 +24,6 @@ pkgver(){
   _short_commit_hash=$(git rev-parse --short=9 HEAD)
   echo "${_version}+r${_commits}+g${_short_commit_hash}"
 }
-
-
-
 
 prepare() {
   cd "$_pkgname"
